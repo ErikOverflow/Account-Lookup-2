@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/ErikOverflow/Account-Lookup-2#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^3.6.0"
   }
 }
