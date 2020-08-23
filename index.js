@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
+const getDb = require('./dbs/riot_mongoClient');
 
 const v1 = express.Router();
 const v2 = express.Router();
@@ -15,4 +16,6 @@ v2.get('/ping', ping);
 const player = require('./routes/player');
 v1.use('/player', player.router);
 
-app.listen(process.env.PORT, () => console.log("app is listening"));
+getDb().then(() => {
+    app.listen(process.env.PORT, () => console.log("app is listening"));
+});
